@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: blue;
+    overflow-x: scroll;
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+}
+
+h1{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+}
+
+.main-hero{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
