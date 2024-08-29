@@ -5,21 +5,20 @@
 }
 
 body {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
     background-color: blue;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    position: relative;
 }
 
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 10;
     display: flex;
@@ -28,20 +27,62 @@ body {
     flex-direction: column;
 }
 
+.down {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+}
+
+.down .social_icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.down .social_icon li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.down .social_icon li a {
+    font-size: 1.5em;
+    color: aliceblue;
+    transition: 0.1s;
+    text-decoration: none;
+}
+
+.down .social_icon li a:hover {
+    color: rgb(242, 255, 2);
+}
+
 .text-overlay {
     color: white;
     display: flex;
+    align-content: center;
+    position: absolute;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
 }
 
 .hero,
 .about,
 .education,
 .skills,
-.designs
-{
-    width: 100vw; /* Adjust to fit each section within viewport width */
-    height: auto;
-    vertical-align: top;
+.designs {
+    width: 100%; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
 }
 
 h1 {
@@ -71,21 +112,47 @@ h1 {
     display: block;
 }
 
+.marquee-container {
+    width: 30vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+}
+
 .marquee {
-    background-color: blue;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    animation: marquee 20s linear infinite;
 }
 
-.about {
-    background-color: blue;
-}
-.education {
-    background-color: blue;
+.marquee p {
+    font-size: 2rem;
+    color: yellow;
+    text-align: center;
+    transform: rotate(90deg); /* Rotate text by 90 degrees */
+    transform-origin: left bottom; /* Adjust the origin for proper rotation */
+    width: 30vh; /* Fill the height of the screen */
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
 }
 
-.skills {
-    background-color: blue;
+/* Vertical Marquee Animation */
+@keyframes marquee {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
 }
 
+.about,
+.education,
+.skills,
 .designs {
     background-color: blue;
+    color: white;
 }
