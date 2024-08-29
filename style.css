@@ -1,33 +1,91 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    display: flex;
-    background: blue;
+body {
     overflow-x: scroll;
-    width: 100%;
-    height: auto;
     overflow-y: hidden;
+    background-color: blue;
 }
 
-h1{
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-overlay {
+    color: white;
+    display: flex;
+}
+
+.hero,
+.about,
+.education,
+.skills,
+.designs
+{
+    width: 100vw; /* Adjust to fit each section within viewport width */
+    height: auto;
+    vertical-align: top;
+}
+
+h1 {
     color: white;
     font-size: 2rem;
     text-align: center;
-    display: flex;
 }
 
-.main-hero{
-    margin: auto;
-    text-align: center;
+.hero-text {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-hero {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    height: 100%;
+}
+
+.hero-img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+}
+
+.marquee {
+    background-color: blue;
+}
+
+.about {
+    background-color: blue;
+}
+.education {
+    background-color: blue;
+}
+
+.skills {
+    background-color: blue;
+}
+
+.designs {
+    background-color: blue;
 }
